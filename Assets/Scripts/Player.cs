@@ -110,7 +110,7 @@ public class Player : MonoBehaviour {
     }
 
     public void Blink() {
-        float step = 0.025f;
+        float step = 0.035f;
         float playerAlpha = spriteRenderer.color.a;
         if (playerAlpha > 0.2f) {
             spriteRenderer.color = new Color(1, 1, 1, playerAlpha - step);
