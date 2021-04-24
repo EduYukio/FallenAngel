@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
     public float fallMultiplier = 10f;
     public float lowJumpMultiplier = 10f;
     public float jumpForce = 10f;
-    // [HideInInspector] public int lastDirection = 1;
+    [HideInInspector] public int lastDirection = 1;
 
     [HideInInspector] public float coyoteTimer;
     public float startCoyoteDurationTime = 0.1f;
@@ -36,11 +36,11 @@ public class Player : MonoBehaviour {
         TransitionToState(GroundedState);
     }
 
-
     void Update() {
         float step = Time.deltaTime;
         if (coyoteTimer >= 0) coyoteTimer -= step;
 
+        UpdateFacingSprite();
         currentState.Update(this);
     }
 
@@ -51,6 +51,15 @@ public class Player : MonoBehaviour {
         if (printDebugStates) {
             debugState = currentState.GetType().Name;
             Debug.Log(debugState);
+        }
+    }
+
+    private void UpdateFacingSprite() {
+        if (lastDirection == 1) {
+            spriteRenderer.flipX = false;
+        }
+        else if (lastDirection == -1) {
+            spriteRenderer.flipX = true;
         }
     }
 }

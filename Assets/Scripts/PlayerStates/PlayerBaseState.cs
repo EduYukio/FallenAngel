@@ -50,9 +50,9 @@ public abstract class PlayerBaseState {
     public void ProcessMovementInput(Player player) {
         float xInput = Input.GetAxisRaw("Horizontal");
         int direction = GetRawDirection(xInput);
-        // if (direction != 0) {
-        //     player.lastDirection = direction;
-        // }
+        if (direction != 0) {
+            player.lastDirection = direction;
+        }
 
         player.rb.velocity = new Vector2(direction * player.moveSpeed, player.rb.velocity.y);
     }

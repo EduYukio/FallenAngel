@@ -7,6 +7,7 @@ public class PlayerWalkingState : PlayerBaseState {
 
     public override void Update(Player player) {
         base.ProcessMovementInput(player);
+        PlayAnimationIfCan(player);
         ResetCoyoteTimer(player);
 
         if (CheckTransitionToGrounded(player)) return;
@@ -30,5 +31,11 @@ public class PlayerWalkingState : PlayerBaseState {
 
     void ResetCoyoteTimer(Player player) {
         player.coyoteTimer = player.startCoyoteDurationTime;
+    }
+
+    private void PlayAnimationIfCan(Player player) {
+        if (Helper.IsPlayingAnimation("Walking", player.animator)) return;
+
+        player.animator.Play("Walking");
     }
 }
