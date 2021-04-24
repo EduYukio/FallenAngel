@@ -47,6 +47,15 @@ public abstract class PlayerBaseState {
         return false;
     }
 
+    public virtual bool CheckTransitionToShooting(Player player) {
+        if (Input.GetButton("Shooting")) {
+            player.TransitionToState(player.ShootingState);
+            return true;
+        }
+
+        return false;
+    }
+
     public void ProcessMovementInput(Player player) {
         float xInput = Input.GetAxisRaw("Horizontal");
         int direction = GetRawDirection(xInput);

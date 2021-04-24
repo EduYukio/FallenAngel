@@ -11,6 +11,7 @@ public class PlayerJumpingState : PlayerBaseState {
         base.ProcessMovementInput(player);
         CheckIfLeftGround(player);
 
+        if (base.CheckTransitionToShooting(player)) return;
         if (CheckTransitionToGrounded(player)) return;
         if (base.CheckTransitionToFalling(player)) return;
     }

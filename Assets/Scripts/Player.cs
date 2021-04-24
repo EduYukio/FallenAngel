@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
     public readonly PlayerJumpingState JumpingState = new PlayerJumpingState();
     public readonly PlayerFallingState FallingState = new PlayerFallingState();
     public readonly PlayerDyingState DyingState = new PlayerDyingState();
+    public readonly PlayerShootingState ShootingState = new PlayerShootingState();
 
     public bool printDebugStates = false;
     public string debugState;
@@ -38,6 +39,15 @@ public class Player : MonoBehaviour {
 
     public GameObject cameraHolder;
 
+    public float shootingCooldownTimer = 0f;
+    public float startShootingCooldownTimer = 0.1f;
+
+    public float defaultBulletSpeed = 9f;
+    public float shootingForce = 5f;
+    public float shootingMaxSpeed = 10f;
+
+    public GameObject defaultBulletPrefab;
+
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -48,8 +58,7 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
-        float step = Time.deltaTime;
-        if (coyoteTimer >= 0) coyoteTimer -= step;
+        ProcessTimers();
 
         UpdateFacingSprite();
         currentState.Update(this);
@@ -76,6 +85,12 @@ public class Player : MonoBehaviour {
         else if (lastDirection == -1) {
             spriteRenderer.flipX = true;
         }
+    }
+
+    private void ProcessTimers() {
+        float step = Time.deltaTime;
+        if (shootingCooldownTimer >= 0) shootingCooldownTimer -= step;
+        if (coyoteTimer >= 0) coyoteTimer -= step;
     }
 
     public void TakeDamage() {

@@ -9,6 +9,7 @@ public class PlayerFallingState : PlayerBaseState {
         BetterFalling(player);
         base.ProcessMovementInput(player);
 
+        if (base.CheckTransitionToShooting(player)) return;
         if (CheckTransitionToJumping(player)) return;
         if (CheckTransitionToGrounded(player)) return;
     }

@@ -14293,14 +14293,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 463509138, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 463509138, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 519420028, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6764035085250236644, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
       propertyPath: printDebugStates
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6764035085250236644, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
       propertyPath: cameraHolder
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 6764035085250236644, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
+      propertyPath: defaultBulletPrefab
+      value: 
+      objectReference: {fileID: 2184341708168693140, guid: 83c41dbacbcdec044aed64c4628285d7, type: 3}
     - target: {fileID: 6764035085250236645, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.5
@@ -14352,6 +14368,10 @@ PrefabInstance:
     - target: {fileID: 6764035085250236665, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6764035085250236665, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6764035085250236666, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
       propertyPath: m_Sprite
