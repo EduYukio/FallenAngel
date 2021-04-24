@@ -24,6 +24,29 @@ public abstract class PlayerBaseState {
         return false;
     }
 
+    public virtual bool CheckTransitionToFalling(Player player) {
+        if (player.isGrounded) return false;
+
+        bool playerIsFalling = player.rb.velocity.y <= 0;
+        bool playerStoppedJumping = player.rb.velocity.y > 0 && !Input.GetButton("Jump");
+
+        if (playerIsFalling || playerStoppedJumping) {
+            player.TransitionToState(player.FallingState);
+            return true;
+        }
+
+        return false;
+    }
+
+    public virtual bool CheckTransitionToJumping(Player player) {
+        if (Input.GetButtonDown("Jump")) {
+            player.TransitionToState(player.JumpingState);
+            return true;
+        }
+
+        return false;
+    }
+
     public void ProcessMovementInput(Player player) {
         float xInput = Input.GetAxisRaw("Horizontal");
         int direction = GetRawDirection(xInput);

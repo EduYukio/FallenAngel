@@ -9,8 +9,8 @@ public class PlayerWalkingState : PlayerBaseState {
         base.ProcessMovementInput(player);
 
         if (CheckTransitionToGrounded(player)) return;
-        // if (base.CheckTransitionToFalling(player)) return;
-        // if (base.CheckTransitionToJumping(player)) return;
+        if (base.CheckTransitionToFalling(player)) return;
+        if (base.CheckTransitionToJumping(player)) return;
     }
 
     void Setup(Player player) {

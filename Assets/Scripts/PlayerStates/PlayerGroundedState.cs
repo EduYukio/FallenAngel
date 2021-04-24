@@ -7,8 +7,8 @@ public class PlayerGroundedState : PlayerBaseState {
     }
 
     public override void Update(Player player) {
-        // if (base.CheckTransitionToFalling(player)) return;
-        // if (base.CheckTransitionToJumping(player)) return;
+        if (base.CheckTransitionToFalling(player)) return;
+        if (base.CheckTransitionToJumping(player)) return;
         if (base.CheckTransitionToWalking(player)) return;
     }
 
