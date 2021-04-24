@@ -147,6 +147,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &519420028 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 519420028, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
+  m_PrefabInstance: {fileID: 6764035085275170805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &533029365
 GameObject:
   m_ObjectHideFlags: 0
@@ -14292,6 +14297,10 @@ PrefabInstance:
       propertyPath: printDebugStates
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6764035085250236644, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
+      propertyPath: cameraHolder
+      value: 
+      objectReference: {fileID: 519420028}
     - target: {fileID: 6764035085250236645, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.5

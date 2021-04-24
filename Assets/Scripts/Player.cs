@@ -14,6 +14,7 @@ public class Player : MonoBehaviour {
     public readonly PlayerWalkingState WalkingState = new PlayerWalkingState();
     public readonly PlayerJumpingState JumpingState = new PlayerJumpingState();
     public readonly PlayerFallingState FallingState = new PlayerFallingState();
+    public readonly PlayerDyingState DyingState = new PlayerDyingState();
 
     public bool printDebugStates = false;
     public string debugState;
@@ -34,6 +35,9 @@ public class Player : MonoBehaviour {
 
     public int maxHP = 5;
     public int hp = 5;
+
+    public GameObject cameraHolder;
+
 
     void Start() {
         rb = GetComponent<Rigidbody2D>();
@@ -78,10 +82,10 @@ public class Player : MonoBehaviour {
         hp--;
 
 
-        // if (hp <= 0) {
-        //     TransitionToState(DyingState);
-        // return;
-        // }
+        if (hp <= 0) {
+            TransitionToState(DyingState);
+            return;
+        }
 
         ActivateInvulnerability();
     }
