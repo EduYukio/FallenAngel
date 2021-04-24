@@ -7,13 +7,9 @@ public class Fly : Enemy {
     public readonly FlyDyingState DyingState = new FlyDyingState();
     public readonly FlyMovingState MovingState = new FlyMovingState();
 
-    public float moveSpeed = 3f;
-    // public float playerRayDistance = 5f;
-    public Transform groundTransform;
-    public Transform frontTransform;
-    public Transform moreFrontTransform;
-    public bool needToTurn = false;
+    public float moveSpeed = 2f;
     [HideInInspector] public SpriteRenderer spriteRenderer;
+    [HideInInspector] public Player player;
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
@@ -22,6 +18,8 @@ public class Fly : Enemy {
     }
 
     private void Start() {
+        player = FindObjectOfType<Player>();
+
         hp = maxHP;
         TransitionToState(MovingState);
     }
