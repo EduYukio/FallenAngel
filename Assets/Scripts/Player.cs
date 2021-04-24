@@ -21,6 +21,8 @@ public class Player : MonoBehaviour {
     public float jumpForce = 10f;
     // [HideInInspector] public int lastDirection = 1;
 
+    [HideInInspector] public float coyoteTimer;
+    public float startCoyoteDurationTime = 0.1f;
 
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public Animator animator;
@@ -36,8 +38,10 @@ public class Player : MonoBehaviour {
 
 
     void Update() {
-        currentState.Update(this);
+        float step = Time.deltaTime;
+        if (coyoteTimer >= 0) coyoteTimer -= step;
 
+        currentState.Update(this);
     }
 
     public void TransitionToState(PlayerBaseState state) {

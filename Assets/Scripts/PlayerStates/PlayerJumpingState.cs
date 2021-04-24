@@ -16,6 +16,7 @@ public class PlayerJumpingState : PlayerBaseState {
     }
 
     void Setup(Player player) {
+        player.coyoteTimer = 0;
         leftGround = false;
     }
 

@@ -7,6 +7,7 @@ public class PlayerWalkingState : PlayerBaseState {
 
     public override void Update(Player player) {
         base.ProcessMovementInput(player);
+        ResetCoyoteTimer(player);
 
         if (CheckTransitionToGrounded(player)) return;
         if (base.CheckTransitionToFalling(player)) return;
@@ -25,5 +26,9 @@ public class PlayerWalkingState : PlayerBaseState {
             return true;
         }
         return false;
+    }
+
+    void ResetCoyoteTimer(Player player) {
+        player.coyoteTimer = player.startCoyoteDurationTime;
     }
 }

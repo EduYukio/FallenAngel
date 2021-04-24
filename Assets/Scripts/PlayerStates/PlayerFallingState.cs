@@ -9,6 +9,7 @@ public class PlayerFallingState : PlayerBaseState {
         BetterFalling(player);
         base.ProcessMovementInput(player);
 
+        if (CheckTransitionToJumping(player)) return;
         if (CheckTransitionToGrounded(player)) return;
     }
 
@@ -33,6 +34,14 @@ public class PlayerFallingState : PlayerBaseState {
         if (player.isGrounded) {
             player.TransitionToState(player.GroundedState);
             return true;
+        }
+
+        return false;
+    }
+
+    public override bool CheckTransitionToJumping(Player player) {
+        if (player.coyoteTimer > 0) {
+            return base.CheckTransitionToJumping(player);
         }
 
         return false;
