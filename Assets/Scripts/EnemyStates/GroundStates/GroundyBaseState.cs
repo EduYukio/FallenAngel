@@ -21,7 +21,9 @@ public abstract class GroundyBaseState {
     }
 
     public void MoveAction(Groundy groundy) {
-        groundy.transform.Translate(Vector2.right * groundy.moveSpeed * Time.deltaTime);
+        Vector2 moveQuantity = Vector2.right * groundy.moveSpeed * Time.deltaTime;
+        Vector3 noZQuantity = new Vector3(moveQuantity.x, moveQuantity.y, 0f);
+        groundy.transform.Translate(noZQuantity);
     }
 
     public void InvertDirectionIfNeeded(Groundy groundy) {

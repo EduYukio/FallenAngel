@@ -22,7 +22,6 @@ public class GroundyBeingHitState : GroundyBaseState {
     }
 
     void Setup(Groundy groundy) {
-        Debug.Log("Entrou");
         hitTimer = 0.3f;
         // hitTimer = Helper.GetAnimationDuration("BeingHit", groundy.animator);
     }

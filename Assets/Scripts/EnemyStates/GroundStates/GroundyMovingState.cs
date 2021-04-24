@@ -31,9 +31,8 @@ public class GroundyMovingState : GroundyBaseState {
         foreach (var obj in frontRay) {
             if (obj.collider != null) {
                 bool isWall = obj.collider.CompareTag("Ground");
-                bool isEnemy = obj.collider.CompareTag("Enemy");
 
-                bool hasHitObstacle = isWall || isEnemy;
+                bool hasHitObstacle = isWall;
                 if (hasHitObstacle) {
                     return true;
                 }
