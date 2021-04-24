@@ -6,7 +6,10 @@ public class Enemy : MonoBehaviour {
     public float maxHP = 3f;
     public float hp = 3f;
 
-    private void OnCollisionEnter2D(Collision2D other) {
+    [HideInInspector] public Animator animator;
+    [HideInInspector] public Rigidbody2D rb;
+
+    private void OnCollisionStay2D(Collision2D other) {
         GameObject otherObj = other.gameObject;
         if (otherObj.CompareTag("Player")) {
             Player player = otherObj.GetComponent<Player>();
@@ -16,17 +19,8 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    public void TakeDamage() {
-        hp--;
-
-        if (hp <= 0) {
-            Die();
-            return;
-        }
-    }
-
-    public void Die() {
+    public static void DieAction(GameObject enemy) {
         //animação de death?
-        Destroy(gameObject);
+        Destroy(enemy);
     }
 }
