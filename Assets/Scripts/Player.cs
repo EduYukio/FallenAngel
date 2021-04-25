@@ -16,6 +16,8 @@ public class Player : MonoBehaviour {
     public readonly PlayerFallingState FallingState = new PlayerFallingState();
     public readonly PlayerDyingState DyingState = new PlayerDyingState();
     public readonly PlayerShootingState ShootingState = new PlayerShootingState();
+    public readonly PlayerStompingState StompingState = new PlayerStompingState();
+
 
     public bool printDebugStates = false;
     public string debugState;
@@ -26,6 +28,7 @@ public class Player : MonoBehaviour {
     public float fallMultiplier = 10f;
     public float lowJumpMultiplier = 10f;
     public float jumpForce = 10f;
+    public float stompForce = 10f;
     [HideInInspector] public int lastDirection = 1;
 
     [HideInInspector] public float coyoteTimer;
@@ -73,9 +76,13 @@ public class Player : MonoBehaviour {
         currentState.EnterState(this);
 
         if (printDebugStates) {
-            debugState = currentState.GetType().Name;
+            debugState = GetStateName();
             Debug.Log(debugState);
         }
+    }
+
+    public string GetStateName() {
+        return currentState.GetType().Name;
     }
 
     private void UpdateFacingSprite() {

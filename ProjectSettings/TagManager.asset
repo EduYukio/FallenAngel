@@ -9,6 +9,7 @@ TagManager:
   - PlayerBullet
   - Groundy
   - Fly
+  - PlayerStompCollider
   layers:
   - Default
   - TransparentFX

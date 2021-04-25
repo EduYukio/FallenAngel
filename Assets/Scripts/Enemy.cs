@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour {
     [HideInInspector] public Animator animator;
     [HideInInspector] public Rigidbody2D rb;
 
-    // private void OnCollisionStay2D(Collision2D other) {
     private void OnTriggerStay2D(Collider2D other) {
         GameObject otherObj = other.gameObject;
         if (otherObj.CompareTag("Player")) {

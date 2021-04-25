@@ -115985,30 +115985,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6764035085250236644, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
-      propertyPath: coyoteTimer
-      value: -0.0068732
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764035085250236644, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
-      propertyPath: hp
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764035085250236644, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
-      propertyPath: shootingCooldownTimer
-      value: -0.0194959
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764035085250236644, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
-      propertyPath: shootingForce
-      value: 9.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764035085250236644, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
-      propertyPath: shootingMaxSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764035085250236644, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
-      propertyPath: cameraHolder
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6764035085250236645, guid: 834ff6df5dab7064d8eb5fcc76a4c636, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.5
