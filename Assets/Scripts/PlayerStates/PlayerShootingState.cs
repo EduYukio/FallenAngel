@@ -37,6 +37,7 @@ public class PlayerShootingState : PlayerBaseState {
         float ySpeed = Mathf.Clamp(player.maxFallSpeed + player.shootingForce, 0f, player.shootingMaxSpeed);
         player.rb.velocity = new Vector2(player.rb.velocity.x, ySpeed);
         player.ammunition--;
+        player.UpdateAmmoUI();
     }
 
     public override bool CheckTransitionToFalling(Player player) {

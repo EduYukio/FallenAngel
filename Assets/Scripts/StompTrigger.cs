@@ -29,6 +29,7 @@ public class StompTrigger : MonoBehaviour {
         // screen shake
         player.TransitionToState(player.StompingState);
         player.ammunition = player.maxAmmunition;
+        player.UpdateAmmoUI();
         Destroy(gameObject.transform.parent.gameObject);
     }
 }

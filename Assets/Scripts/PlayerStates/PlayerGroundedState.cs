@@ -21,6 +21,7 @@ public class PlayerGroundedState : PlayerBaseState {
     void GroundedAction(Player player) {
         player.rb.velocity = Vector2.zero;
         player.ammunition = player.maxAmmunition;
+        player.UpdateAmmoUI();
     }
 
     private void PlayAnimationIfCan(Player player) {

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour {
     [HideInInspector] public Rigidbody2D rb;
@@ -54,8 +55,14 @@ public class Player : MonoBehaviour {
 
     public GameObject defaultBulletPrefab;
 
+    public TextMeshProUGUI healthUI;
+    public TextMeshProUGUI ammoUI;
+
 
     void Start() {
+        UpdateHealthUI();
+        UpdateAmmoUI();
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -105,7 +112,7 @@ public class Player : MonoBehaviour {
 
     public void TakeDamage() {
         hp--;
-
+        UpdateHealthUI();
 
         if (hp <= 0) {
             TransitionToState(DyingState);
@@ -113,6 +120,19 @@ public class Player : MonoBehaviour {
         }
 
         ActivateInvulnerability();
+    }
+
+    public void RegenHP() {
+        hp = maxHP;
+        UpdateHealthUI();
+    }
+
+    public void UpdateHealthUI() {
+        healthUI.text = "Health: " + hp.ToString() + "/" + maxHP.ToString();
+    }
+
+    public void UpdateAmmoUI() {
+        ammoUI.text = "Ammo: " + ammunition.ToString() + "/" + maxAmmunition.ToString();
     }
 
     public void ActivateInvulnerability() {
