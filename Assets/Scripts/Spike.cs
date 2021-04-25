@@ -5,6 +5,7 @@ public class Spike : MonoBehaviour {
         GameObject otherObj = other.gameObject;
         if (otherObj.CompareTag("Player")) {
             Player player = otherObj.GetComponent<Player>();
+            player.TransitionToState(player.StompingState);
             if (player.isInvulnerable) return;
 
             if (player.hp > 0) player.TakeDamage();
