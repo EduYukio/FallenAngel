@@ -27,7 +27,7 @@ public class PlayerShootingState : PlayerBaseState {
         // Manager.audio.Play("Gun Shoot");
         // float xOffset = UnityEngine.Random.Range(-0.2f, 0.2f);
         float xOffset = 0f;
-        Vector3 spawnPosition = player.transform.position + new Vector3(xOffset, -0.55f, 0f);
+        Vector3 spawnPosition = player.transform.position + new Vector3(xOffset, -0.6f, 0f);
         GameObject bullet = MonoBehaviour.Instantiate(player.defaultBulletPrefab, spawnPosition, Quaternion.identity);
         Vector3 direction = Vector3.down;
 
@@ -35,7 +35,8 @@ public class PlayerShootingState : PlayerBaseState {
 
         player.shootingCooldownTimer = player.startShootingCooldownTimer;
 
-        float ySpeed = Mathf.Clamp(player.rb.velocity.y + player.shootingForce, 0f, player.shootingMaxSpeed);
+        // float ySpeed = Mathf.Clamp(player.rb.velocity.y + player.shootingForce, 0f, player.shootingMaxSpeed);
+        float ySpeed = Mathf.Clamp(player.maxFallSpeed + player.shootingForce, 0f, player.shootingMaxSpeed);
         player.rb.velocity = new Vector2(player.rb.velocity.x, ySpeed);
     }
 
