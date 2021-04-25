@@ -5,7 +5,7 @@ public class GroundyMovingState : GroundyBaseState {
     float distanceToCheckObstacle = 0.2f;
 
     public override void EnterState(Groundy groundy) {
-        // groundy.animator.Play("Moving");
+        groundy.animator.Play("Walking");
     }
 
     public override void Update(Groundy groundy) {
