@@ -25,9 +25,13 @@ public class StompTrigger : MonoBehaviour {
     }
 
     public void Stomp() {
+        player.TransitionToState(player.StompingState);
+        if (transform.parent.gameObject.name.Contains("Evil")) {
+            if (!player.isInvulnerable) player.TakeDamage();
+            return;
+        }
         // particulas
         // screen shake
-        player.TransitionToState(player.StompingState);
         player.ammunition = player.maxAmmunition;
         player.UpdateAmmoUI();
         Destroy(gameObject.transform.parent.gameObject);
