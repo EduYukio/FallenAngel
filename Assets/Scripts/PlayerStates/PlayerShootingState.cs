@@ -9,7 +9,7 @@ public class PlayerShootingState : PlayerBaseState {
     public override void Update(Player player) {
         base.ProcessMovementInput(player);
 
-        if (Input.GetButton("Shooting")) {
+        if (player.ammunition > 0 && Input.GetButton("Shooting")) {
             ShootAction(player);
             return;
         }
@@ -25,7 +25,6 @@ public class PlayerShootingState : PlayerBaseState {
         if (player.shootingCooldownTimer > 0) return;
 
         // Manager.audio.Play("Gun Shoot");
-        // float xOffset = UnityEngine.Random.Range(-0.2f, 0.2f);
         float xOffset = 0f;
         Vector3 spawnPosition = player.transform.position + new Vector3(xOffset, -0.6f, 0f);
         GameObject bullet = MonoBehaviour.Instantiate(player.defaultBulletPrefab, spawnPosition, Quaternion.identity);
@@ -35,9 +34,9 @@ public class PlayerShootingState : PlayerBaseState {
 
         player.shootingCooldownTimer = player.startShootingCooldownTimer;
 
-        // float ySpeed = Mathf.Clamp(player.rb.velocity.y + player.shootingForce, 0f, player.shootingMaxSpeed);
         float ySpeed = Mathf.Clamp(player.maxFallSpeed + player.shootingForce, 0f, player.shootingMaxSpeed);
         player.rb.velocity = new Vector2(player.rb.velocity.x, ySpeed);
+        player.ammunition--;
     }
 
     public override bool CheckTransitionToFalling(Player player) {

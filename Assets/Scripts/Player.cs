@@ -49,6 +49,9 @@ public class Player : MonoBehaviour {
     public float shootingForce = 5f;
     public float shootingMaxSpeed = 10f;
 
+    public int maxAmmunition = 6;
+    public int ammunition = 6;
+
     public GameObject defaultBulletPrefab;
 
 

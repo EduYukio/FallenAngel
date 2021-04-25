@@ -20,6 +20,7 @@ public class PlayerGroundedState : PlayerBaseState {
 
     void GroundedAction(Player player) {
         player.rb.velocity = Vector2.zero;
+        player.ammunition = player.maxAmmunition;
     }
 
     private void PlayAnimationIfCan(Player player) {

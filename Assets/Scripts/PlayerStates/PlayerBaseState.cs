@@ -49,6 +49,11 @@ public abstract class PlayerBaseState {
 
     public virtual bool CheckTransitionToShooting(Player player) {
         if (Input.GetButton("Shooting")) {
+            if (player.ammunition <= 0) {
+                // tocar sfx de empty
+                return false;
+            }
+
             player.TransitionToState(player.ShootingState);
             return true;
         }

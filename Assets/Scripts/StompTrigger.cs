@@ -28,7 +28,7 @@ public class StompTrigger : MonoBehaviour {
         // particulas
         // screen shake
         player.TransitionToState(player.StompingState);
-        // recarrega municao
+        player.ammunition = player.maxAmmunition;
         Destroy(gameObject.transform.parent.gameObject);
     }
 }
