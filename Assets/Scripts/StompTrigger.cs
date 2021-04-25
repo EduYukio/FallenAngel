@@ -35,6 +35,7 @@ public class StompTrigger : MonoBehaviour {
         player.ammunition = player.maxAmmunition;
         player.UpdateAmmoUI();
         Manager.audio.Play("stomp");
+        Manager.shaker.Shake(player.cameraObj, player.stompShakeDuration, player.stompShakeMagnitude);
         Destroy(gameObject.transform.parent.gameObject);
     }
 }

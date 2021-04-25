@@ -20,17 +20,11 @@ public class PlayerDyingState : PlayerBaseState {
     void Setup(Player player) {
         // player.dyingParticles.Play();
         player.isDying = true;
-        // player.spriteRenderer.color = Color.white;
-
         dyingTimer = 0.5f;
-        // player.animator.Play("PlayerHit");
-        // Manager.audio.Play("PlayerDying");
 
-        // Manager.shaker.Shake(player.cameraObj, player.config.dyingShakeDuration, player.config.dyingShakeMagnitude);
-        // player.cameraHolder.transform.parent = null;
+        Manager.shaker.Shake(player.cameraObj, player.dyingShakeDuration, player.dyingShakeMagnitude);
 
         float direction = -player.lastDirection;
-        // player.rb.bodyType = RigidbodyType2D.Dynamic;
         player.rb.velocity = new Vector3(direction * 4f, 9f, 0);
         player.rb.constraints = RigidbodyConstraints2D.None;
         player.rb.angularVelocity = direction * -50f;

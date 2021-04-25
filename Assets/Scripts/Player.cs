@@ -59,6 +59,13 @@ public class Player : MonoBehaviour {
     public TextMeshProUGUI healthUI;
     public TextMeshProUGUI ammoUI;
 
+    public GameObject cameraObj;
+    public float dyingShakeDuration;
+    public float dyingShakeMagnitude;
+
+    public float stompShakeDuration;
+    public float stompShakeMagnitude;
+
 
     void Start() {
         UpdateHealthUI();

@@ -9,6 +9,8 @@ public class SmoothCamera : MonoBehaviour {
     }
 
     private void Update() {
+        if (Manager.shaker.cameraIsShaking) return;
+
         Vector2 nextPosition = new Vector2(player.transform.position.x, player.transform.position.y - 3.1f);
         Vector2 camPos = new Vector2(transform.position.x, transform.position.y);
         float distance = (camPos - nextPosition).magnitude;

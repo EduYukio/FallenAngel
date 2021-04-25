@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraShaker : MonoBehaviour {
+    public bool cameraIsShaking = false;
+
     public IEnumerator ShakeCoroutine(GameObject cameraObj, float duration, float magnitude) {
-        Vector3 originalPos = cameraObj.transform.localPosition;
+        cameraIsShaking = true;
+
+        Vector3 originalPos = cameraObj.transform.position;
 
         float elapsed = 0.0f;
         while (elapsed < duration) {
             float x = Random.Range(-1f, 1f) * magnitude;
             float y = Random.Range(-1f, 1f) * magnitude;
 
-            cameraObj.transform.localPosition = new Vector3(x, y, originalPos.z);
-
+            cameraObj.transform.position = new Vector3(originalPos.x + x, originalPos.y + y, originalPos.z);
             elapsed += Time.deltaTime;
 
             yield return null;
         }
+        cameraIsShaking = false;
 
-        cameraObj.transform.localPosition = originalPos;
+        cameraObj.transform.position = originalPos;
     }
 
     public void Shake(GameObject cameraObj, float duration, float magnitude) {

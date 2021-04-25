@@ -207,6 +207,11 @@ MonoBehaviour:
   defaultBulletPrefab: {fileID: 2184341708168693140, guid: 83c41dbacbcdec044aed64c4628285d7, type: 3}
   healthUI: {fileID: 0}
   ammoUI: {fileID: 0}
+  cameraObj: {fileID: 0}
+  dyingShakeDuration: 0.15
+  dyingShakeMagnitude: 0.25
+  stompShakeDuration: 0.1
+  stompShakeMagnitude: 0.2
 --- !u!212 &6764035085250236666
 SpriteRenderer:
   m_ObjectHideFlags: 0
