@@ -26,7 +26,7 @@ public class Groundy : Enemy {
 
     private void Start() {
         hp = maxHP;
-        TransitionToState(MovingState);
+        StartCoroutine(nameof(WaitToBeginMoving));
     }
 
     private void Update() {
@@ -50,5 +50,10 @@ public class Groundy : Enemy {
         if (otherColors < 1) {
             spriteRenderer.color = new Color(1, otherColors + step, otherColors + step, 1);
         }
+    }
+
+    IEnumerator WaitToBeginMoving() {
+        yield return new WaitForSeconds(0.5f);
+        TransitionToState(MovingState);
     }
 }
