@@ -7,7 +7,6 @@ public class PlayerFallingState : PlayerBaseState {
     }
 
     public override void Update(Player player) {
-        // PlayAnimationIfCan(player);
         BetterFalling(player);
         base.ProcessMovementInput(player);
 
@@ -49,10 +48,4 @@ public class PlayerFallingState : PlayerBaseState {
 
         return false;
     }
-
-    // private void PlayAnimationIfCan(Player player) {
-    //     if (Helper.IsPlayingAnimation("Shooting", player.animator)) return;
-
-    //     player.animator.Play("Falling");
-    // }
 }
