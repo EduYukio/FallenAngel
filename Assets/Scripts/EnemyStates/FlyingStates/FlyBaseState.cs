@@ -21,7 +21,8 @@ public abstract class FlyBaseState {
     public void MoveAction(Fly fly) {
         if (!fly.spriteRenderer.isVisible) return;
 
-        Vector3 coords = fly.player.transform.position - fly.transform.position;
+        Vector3 targetPosition = fly.player.transform.position + new Vector3(0f, -0.8f, 0f);
+        Vector3 coords = targetPosition - fly.transform.position;
         Vector2 direction = (new Vector2(coords.x, coords.y)).normalized;
         fly.transform.Translate(direction * fly.moveSpeed * Time.deltaTime);
     }

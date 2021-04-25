@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class GroundyMovingState : GroundyBaseState {
     float distanceToCheckGround = 0.2f;
-    float distanceToCheckObstacle = 0.1f;
+    float distanceToCheckObstacle = 0.15f;
 
     public override void EnterState(Groundy groundy) {
         groundy.animator.Play("Walking");

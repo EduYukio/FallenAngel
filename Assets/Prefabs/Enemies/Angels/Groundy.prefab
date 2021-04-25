@@ -69,10 +69,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7982619485620779133}
+  - component: {fileID: 7982619485620779009}
   - component: {fileID: 7982619485620779132}
   - component: {fileID: 7982619485620779010}
   - component: {fileID: 7982619485620779011}
-  - component: {fileID: 7982619485620779009}
   - component: {fileID: 630477886}
   - component: {fileID: 7887663077627707130}
   m_Layer: 12
@@ -100,6 +100,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7982619485620779009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7982619485620779135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 359575b63f96a0b449ecd21e7da51c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 2
+  hp: 2
+  animator: {fileID: 0}
+  rb: {fileID: 0}
+  moveSpeed: 2
+  groundTransform: {fileID: 7982619485924431480}
+  frontTransform: {fileID: 7982619484687649849}
+  moreFrontTransform: {fileID: 7982619485108874346}
+  needToTurn: 0
+  isWaiting: 0
+  spriteRenderer: {fileID: 0}
 --- !u!212 &7982619485620779132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -198,28 +221,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3404935, y: 0.6731298}
   m_EdgeRadius: 0
---- !u!114 &7982619485620779009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7982619485620779135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 359575b63f96a0b449ecd21e7da51c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 5
-  hp: 5
-  animator: {fileID: 0}
-  rb: {fileID: 0}
-  moveSpeed: 2
-  groundTransform: {fileID: 7982619485924431480}
-  frontTransform: {fileID: 7982619484687649849}
-  moreFrontTransform: {fileID: 7982619485108874346}
-  needToTurn: 0
-  spriteRenderer: {fileID: 0}
 --- !u!95 &630477886
 Animator:
   serializedVersion: 3

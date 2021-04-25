@@ -16,6 +16,7 @@ public class Groundy : Enemy {
     public Transform frontTransform;
     public Transform moreFrontTransform;
     public bool needToTurn = false;
+    public bool isWaiting = false;
     [HideInInspector] public SpriteRenderer spriteRenderer;
 
     private void Awake() {
@@ -30,7 +31,7 @@ public class Groundy : Enemy {
     }
 
     private void Update() {
-        currentState.Update(this);
+        if (!isWaiting) currentState.Update(this);
         BlinkRedIfNeeded();
     }
 
@@ -53,7 +54,9 @@ public class Groundy : Enemy {
     }
 
     IEnumerator WaitToBeginMoving() {
+        isWaiting = true;
         yield return new WaitForSeconds(0.5f);
         TransitionToState(MovingState);
+        isWaiting = false;
     }
 }
