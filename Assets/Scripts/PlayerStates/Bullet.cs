@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Bullet : MonoBehaviour {
-    public float lifetime = 2f;
+    public float lifetime = 1f;
     private void Start() {
         Destroy(gameObject, lifetime);
     }
