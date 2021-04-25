@@ -151,7 +151,8 @@ MonoBehaviour:
   hp: 5
   animator: {fileID: 0}
   rb: {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 3
+  moveRange: 5
   spriteRenderer: {fileID: 0}
   player: {fileID: 0}
 --- !u!95 &1513242220
