@@ -11,4 +11,8 @@ public class MainMenu : MonoBehaviour {
     public void QuitButton() {
         Application.Quit();
     }
+
+    public void BackButton() {
+        SceneManager.LoadScene(1);
+    }
 }
