@@ -179,16 +179,17 @@ MonoBehaviour:
   rb: {fileID: 6764035085250236667}
   animator: {fileID: 1067135756836296318}
   spriteRenderer: {fileID: 6764035085250236666}
-  printDebugStates: 0
+  printDebugStates: 1
   debugState: 
   isGrounded: 0
   moveSpeed: 6
-  maxFallSpeed: -7
+  maxFallSpeed: -5
   fallMultiplier: 3
   lowJumpMultiplier: 5
   jumpForce: 12
-  stompForce: 15
+  stompForce: 8
   lastDirection: -1
+  isDying: 0
   coyoteTimer: -0.0070118
   startCoyoteDurationTime: 0.1
   invulnerableTime: 1.5
@@ -199,10 +200,10 @@ MonoBehaviour:
   shootingCooldownTimer: 0
   startShootingCooldownTimer: 0.2
   defaultBulletSpeed: 9
-  shootingForce: 10.2
+  shootingForce: 8.2
   shootingMaxSpeed: 10
-  maxAmmunition: 6
-  ammunition: 6
+  maxAmmunition: 8
+  ammunition: 8
   defaultBulletPrefab: {fileID: 2184341708168693140, guid: 83c41dbacbcdec044aed64c4628285d7, type: 3}
   healthUI: {fileID: 0}
   ammoUI: {fileID: 0}
