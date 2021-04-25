@@ -9,7 +9,7 @@ public class SmoothCamera : MonoBehaviour {
     }
 
     private void Update() {
-        Vector2 nextPosition = new Vector2(player.transform.position.x, player.transform.position.y - 2f);
+        Vector2 nextPosition = new Vector2(player.transform.position.x, player.transform.position.y - 3.1f);
         Vector2 camPos = new Vector2(transform.position.x, transform.position.y);
         float distance = (camPos - nextPosition).magnitude;
         if (Mathf.Abs(distance) < 0.1f) return;
