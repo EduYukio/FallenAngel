@@ -12,7 +12,6 @@ public class Groundy : Enemy {
     public readonly GroundyMovingState MovingState = new GroundyMovingState();
 
     public float moveSpeed = 3f;
-    // public float playerRayDistance = 5f;
     public Transform groundTransform;
     public Transform frontTransform;
     public Transform moreFrontTransform;
@@ -32,6 +31,7 @@ public class Groundy : Enemy {
 
     private void Update() {
         currentState.Update(this);
+        BlinkRedIfNeeded();
     }
 
     public void TransitionToState(GroundyBaseState state) {
@@ -42,5 +42,13 @@ public class Groundy : Enemy {
     public void TakeDamage() {
         hp--;
         TransitionToState(BeingHitState);
+    }
+
+    public void BlinkRedIfNeeded() {
+        float step = 0.1f;
+        float otherColors = spriteRenderer.color.g;
+        if (otherColors < 1) {
+            spriteRenderer.color = new Color(1, otherColors + step, otherColors + step, 1);
+        }
     }
 }

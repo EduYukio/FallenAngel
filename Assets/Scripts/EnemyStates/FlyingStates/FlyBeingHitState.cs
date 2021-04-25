@@ -1,10 +1,9 @@
 using UnityEngine;
 
 public class FlyBeingHitState : FlyBaseState {
-    float hitTimer;
+    float hitTimer = 0.1f;
 
     public override void EnterState(Fly fly) {
-        // fly.animator.Play("BeingHit", -1, 0f);
         // Manager.audio.Play("EnemyHit");
         Setup(fly);
         BeingHitAction(fly);
@@ -22,11 +21,10 @@ public class FlyBeingHitState : FlyBaseState {
     }
 
     void Setup(Fly fly) {
-        hitTimer = 0.3f;
-        // hitTimer = Helper.GetAnimationDuration("BeingHit", fly.animator);
     }
 
     void BeingHitAction(Fly fly) {
         fly.rb.velocity = Vector2.zero;
+        fly.spriteRenderer.color = new Color(1, 0, 0, 1);
     }
 }

@@ -1,10 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class GroundyBeingHitState : GroundyBaseState {
-    float hitTimer;
+    float hitTimer = 0.1f;
 
     public override void EnterState(Groundy groundy) {
-        // groundy.animator.Play("BeingHit", -1, 0f);
         // Manager.audio.Play("EnemyHit");
         Setup(groundy);
         BeingHitAction(groundy);
@@ -22,11 +22,10 @@ public class GroundyBeingHitState : GroundyBaseState {
     }
 
     void Setup(Groundy groundy) {
-        hitTimer = 0.3f;
-        // hitTimer = Helper.GetAnimationDuration("BeingHit", groundy.animator);
     }
 
     void BeingHitAction(Groundy groundy) {
         groundy.rb.velocity = Vector2.zero;
+        groundy.spriteRenderer.color = new Color(1, 0, 0, 1);
     }
 }

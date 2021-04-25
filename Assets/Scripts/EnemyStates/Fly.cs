@@ -26,6 +26,7 @@ public class Fly : Enemy {
 
     private void Update() {
         currentState.Update(this);
+        BlinkRedIfNeeded();
     }
 
     public void TransitionToState(FlyBaseState state) {
@@ -36,5 +37,13 @@ public class Fly : Enemy {
     public void TakeDamage() {
         hp--;
         TransitionToState(BeingHitState);
+    }
+
+    public void BlinkRedIfNeeded() {
+        float step = 0.1f;
+        float otherColors = spriteRenderer.color.g;
+        if (otherColors < 1) {
+            spriteRenderer.color = new Color(1, otherColors + step, otherColors + step, 1);
+        }
     }
 }
