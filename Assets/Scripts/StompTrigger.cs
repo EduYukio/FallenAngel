@@ -15,10 +15,10 @@ public class StompTrigger : MonoBehaviour {
             Player player = otherObj.transform.parent.gameObject.GetComponent<Player>();
             string playerState = player.GetStateName();
 
-            bool playerIsFalling = playerState == "PlayerFallingState" && player.rb.velocity.y < 0f;
-            bool playerIsShooting = playerState == "PlayerShootingState";
+            // bool playerIsFalling = playerState == "PlayerFallingState" && player.rb.velocity.y < 0f;
+            // bool playerIsShooting = playerState == "PlayerShootingState";
 
-            if (playerIsFalling || playerIsShooting) {
+            if (player.rb.velocity.y <= 0.05f) {
                 Stomp();
             }
         }
