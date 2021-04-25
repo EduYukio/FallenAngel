@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour {
     public void PlayButton() {
         Sound BGM = Manager.audio.FindSound("LD_song");
         if (!BGM.source.isPlaying) BGM.source.Play();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitButton() {

@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.27169615, y: 0.04064539}
+  m_Size: {x: 0.30911958, y: 0.04064536}
   m_EdgeRadius: 0
 --- !u!1 &463509138
 GameObject:
@@ -201,7 +201,11 @@ MonoBehaviour:
   defaultBulletSpeed: 9
   shootingForce: 10.2
   shootingMaxSpeed: 10
+  maxAmmunition: 6
+  ammunition: 6
   defaultBulletPrefab: {fileID: 2184341708168693140, guid: 83c41dbacbcdec044aed64c4628285d7, type: 3}
+  healthUI: {fileID: 0}
+  ammoUI: {fileID: 0}
 --- !u!212 &6764035085250236666
 SpriteRenderer:
   m_ObjectHideFlags: 0
