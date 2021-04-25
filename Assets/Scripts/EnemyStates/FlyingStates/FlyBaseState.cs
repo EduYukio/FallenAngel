@@ -19,7 +19,10 @@ public abstract class FlyBaseState {
     }
 
     public void MoveAction(Fly fly) {
-        if (!fly.spriteRenderer.isVisible) return;
+        bool flyIsVisible = fly.spriteRenderer.isVisible;
+        float dist = Mathf.Abs(fly.transform.position.y - fly.player.transform.position.y);
+        bool flyIsABitAbovePlayer = dist < 5.5f;
+        if (!flyIsVisible && !flyIsABitAbovePlayer) return;
 
         Vector3 targetPosition = fly.player.transform.position + new Vector3(0f, -0.8f, 0f);
         Vector3 coords = targetPosition - fly.transform.position;
