@@ -172,45 +172,54 @@ MonoBehaviour:
   sounds:
   - name: LD_song
     clip: {fileID: 8300000, guid: 3495fce89ef289b4586c226c5c4f1b2f, type: 3}
-    volume: 1
+    volume: 0.35
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
     loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
+  - name: button_select
+    clip: {fileID: 8300000, guid: ba46d9bc0f41ce742805fa03b179aa75, type: 3}
+    volume: 0.5
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
+  - name: enemy_dying
+    clip: {fileID: 8300000, guid: 63a7d51379195a64997b732c2300110d, type: 3}
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
+  - name: player_being_hit
+    clip: {fileID: 8300000, guid: 036275247265d4d478abe5782a874996, type: 3}
+    volume: 0.88
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
+  - name: shoot
+    clip: {fileID: 8300000, guid: c539d9c07e9566b4eb70827783db67d6, type: 3}
+    volume: 0.71
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: stomp
+    clip: {fileID: 8300000, guid: 50f11451c90319c4aba6f3524fe32cb1, type: 3}
+    volume: 0.58
+    volumeVariance: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}

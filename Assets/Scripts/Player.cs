@@ -115,6 +115,7 @@ public class Player : MonoBehaviour {
     public void TakeDamage() {
         hp--;
         UpdateHealthUI();
+        Manager.audio.Play("player_being_hit");
 
         if (hp <= 0) {
             TransitionToState(DyingState);

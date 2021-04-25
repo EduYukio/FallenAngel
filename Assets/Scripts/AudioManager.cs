@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour {
             sound.source.loop = sound.loop;
 
             sound.source.outputAudioMixerGroup = sound.mixerGroup;
+            SetSourceSettings(sound);
         }
     }
 

@@ -24,7 +24,7 @@ public class PlayerShootingState : PlayerBaseState {
     void ShootAction(Player player) {
         if (player.shootingCooldownTimer > 0) return;
 
-        // Manager.audio.Play("Gun Shoot");
+        Manager.audio.Play("shoot");
         float xOffset = 0f;
         Vector3 spawnPosition = player.transform.position + new Vector3(xOffset, -0.6f, 0f);
         GameObject bullet = MonoBehaviour.Instantiate(player.defaultBulletPrefab, spawnPosition, Quaternion.identity);
