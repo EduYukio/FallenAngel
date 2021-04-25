@@ -19,15 +19,13 @@ public class PlayerDyingState : PlayerBaseState {
 
     void Setup(Player player) {
         // player.dyingParticles.Play();
-        // player.isDying = true;
+        player.isDying = true;
         // player.spriteRenderer.color = Color.white;
 
-        // player.animator.SetFloat("disappearSpeedMultiplier", 1f);
         dyingTimer = 0.5f;
         // player.animator.Play("PlayerHit");
         // Manager.audio.Play("PlayerDying");
 
-        //TODO: refatorar isso aqui
         // Manager.shaker.Shake(player.cameraObj, player.config.dyingShakeDuration, player.config.dyingShakeMagnitude);
         // player.cameraHolder.transform.parent = null;
 
@@ -41,6 +39,7 @@ public class PlayerDyingState : PlayerBaseState {
     }
 
     void DieAction(Player player) {
+        player.isDying = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

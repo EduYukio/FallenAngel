@@ -31,6 +31,7 @@ public class Player : MonoBehaviour {
     public float jumpForce = 10f;
     public float stompForce = 10f;
     [HideInInspector] public int lastDirection = 1;
+    [HideInInspector] public bool isDying = false;
 
     [HideInInspector] public float coyoteTimer;
     public float startCoyoteDurationTime = 0.1f;
@@ -82,6 +83,7 @@ public class Player : MonoBehaviour {
     }
 
     public void TransitionToState(PlayerBaseState state) {
+        if (isDying) return;
         currentState = state;
         currentState.EnterState(this);
 
