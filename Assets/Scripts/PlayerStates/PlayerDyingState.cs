@@ -29,7 +29,7 @@ public class PlayerDyingState : PlayerBaseState {
 
         //TODO: refatorar isso aqui
         // Manager.shaker.Shake(player.cameraObj, player.config.dyingShakeDuration, player.config.dyingShakeMagnitude);
-        player.cameraHolder.transform.parent = null;
+        // player.cameraHolder.transform.parent = null;
 
         float direction = -player.lastDirection;
         // player.rb.bodyType = RigidbodyType2D.Dynamic;
