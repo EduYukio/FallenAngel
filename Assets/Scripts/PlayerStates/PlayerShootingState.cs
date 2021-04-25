@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerShootingState : PlayerBaseState {
     public override void EnterState(Player player) {
+        player.animator.Play("Shooting");
         Setup(player);
     }
 
