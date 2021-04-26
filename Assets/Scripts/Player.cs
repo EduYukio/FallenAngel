@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour {
     [HideInInspector] public Rigidbody2D rb;
@@ -71,6 +72,8 @@ public class Player : MonoBehaviour {
     public ParticleSystem stompParticles;
     public ParticleSystem playerDyingParticles;
 
+    public GameObject backgroundTiles;
+
 
     void Start() {
         UpdateHealthUI();
@@ -84,6 +87,10 @@ public class Player : MonoBehaviour {
     }
 
     void Update() {
+        if (backgroundTiles != null && transform.position.y < 0f) {
+            float col = ((255f - Mathf.Abs(transform.position.y)) / 255f);
+            backgroundTiles.GetComponent<Tilemap>().color = new Color(col, col, col, 1);
+        }
         ProcessTimers();
 
         UpdateFacingSprite();
