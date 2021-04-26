@@ -18,11 +18,11 @@ public class PlayerDyingState : PlayerBaseState {
     }
 
     void Setup(Player player) {
-        // player.dyingParticles.Play();
         player.isDying = true;
         dyingTimer = 0.5f;
 
         Manager.shaker.Shake(player.cameraObj, player.dyingShakeDuration, player.dyingShakeMagnitude);
+        player.playerDyingParticles.Play();
 
         float direction = -player.lastDirection;
         player.rb.velocity = new Vector3(direction * 4f, 9f, 0);

@@ -30,12 +30,11 @@ public class StompTrigger : MonoBehaviour {
             if (!player.isInvulnerable) player.TakeDamage();
             return;
         }
-        // particulas
-        // screen shake
         player.ammunition = player.maxAmmunition;
         player.UpdateAmmoUI();
         Manager.audio.Play("stomp");
         Manager.shaker.Shake(player.cameraObj, player.stompShakeDuration, player.stompShakeMagnitude);
+        player.stompParticles.Play();
         Destroy(gameObject.transform.parent.gameObject);
     }
 }

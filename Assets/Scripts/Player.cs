@@ -66,6 +66,11 @@ public class Player : MonoBehaviour {
     public float stompShakeDuration;
     public float stompShakeMagnitude;
 
+    public ParticleSystem shootParticles;
+    public ParticleSystem emptyAmmoParticles;
+    public ParticleSystem stompParticles;
+    public ParticleSystem playerDyingParticles;
+
 
     void Start() {
         UpdateHealthUI();

@@ -51,6 +51,7 @@ public abstract class PlayerBaseState {
         if (Input.GetButton("Shooting")) {
             if (player.ammunition <= 0) {
                 // tocar sfx de empty
+                player.emptyAmmoParticles.Play();
                 return false;
             }
 

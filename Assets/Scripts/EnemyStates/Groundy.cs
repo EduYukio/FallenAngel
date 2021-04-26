@@ -19,6 +19,8 @@ public class Groundy : Enemy {
     public bool isWaiting = false;
     [HideInInspector] public SpriteRenderer spriteRenderer;
 
+    public ParticleSystem dieParticles;
+
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

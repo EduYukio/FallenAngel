@@ -11,6 +11,8 @@ public class Fly : Enemy {
     [HideInInspector] public SpriteRenderer spriteRenderer;
     [HideInInspector] public Player player;
 
+    public ParticleSystem dieParticles;
+
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

@@ -14,6 +14,10 @@ public class PlayerShootingState : PlayerBaseState {
             return;
         }
 
+        if (player.ammunition <= 0 && Input.GetButton("Shooting")) {
+            player.emptyAmmoParticles.Play();
+        }
+
         if (CheckTransitionToFalling(player)) return;
         if (base.CheckTransitionToGrounded(player)) return;
     }
@@ -25,6 +29,7 @@ public class PlayerShootingState : PlayerBaseState {
         if (player.shootingCooldownTimer > 0) return;
 
         Manager.audio.Play("shoot");
+        player.shootParticles.Play();
         float xOffset = 0f;
         Vector3 spawnPosition = player.transform.position + new Vector3(xOffset, -0.6f, 0f);
         GameObject bullet = MonoBehaviour.Instantiate(player.defaultBulletPrefab, spawnPosition, Quaternion.identity);
