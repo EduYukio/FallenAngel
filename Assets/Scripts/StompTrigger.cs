@@ -25,11 +25,14 @@ public class StompTrigger : MonoBehaviour {
     }
 
     public void Stomp() {
-        player.TransitionToState(player.StompingState);
         if (transform.parent.gameObject.name.Contains("Evil")) {
-            if (!player.isInvulnerable) player.TakeDamage();
+            if (!player.isInvulnerable) {
+                player.TakeDamage();
+                player.TransitionToState(player.StompingState);
+            }
             return;
         }
+        player.TransitionToState(player.StompingState);
         player.ammunition = player.maxAmmunition;
         player.UpdateAmmoUI();
         Manager.audio.Play("stomp");
