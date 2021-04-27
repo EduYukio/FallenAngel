@@ -152,7 +152,7 @@ MonoBehaviour:
   hp: 2
   animator: {fileID: 0}
   rb: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 2.5
   spriteRenderer: {fileID: 0}
   player: {fileID: 0}
   dieParticles: {fileID: 7436333546022103247, guid: fd4b2b2758d13da4e83e4f427b94ced4, type: 3}

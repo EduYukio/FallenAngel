@@ -148,11 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a963f77f20c2e6947b886b691e82de44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 2
-  hp: 2
+  maxHP: 1
+  hp: 1
   animator: {fileID: 0}
   rb: {fileID: 0}
-  moveSpeed: 3
+  moveSpeed: 2.5
   spriteRenderer: {fileID: 0}
   player: {fileID: 0}
   dieParticles: {fileID: 2522224157518973050}

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-    public float maxHP = 3f;
-    public float hp = 3f;
+    public float maxHP;
+    public float hp;
 
     [HideInInspector] public Animator animator;
     [HideInInspector] public Rigidbody2D rb;
