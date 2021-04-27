@@ -198,16 +198,16 @@ MonoBehaviour:
   startCoyoteDurationTime: 0.1
   invulnerableTime: 1.5
   isInvulnerable: 0
-  maxHP: 5
-  hp: 5
+  maxHP: 8
+  hp: 8
   cameraHolder: {fileID: 0}
   shootingCooldownTimer: 0
   startShootingCooldownTimer: 0.2
   defaultBulletSpeed: 9
   shootingForce: 8.2
   shootingMaxSpeed: 10
-  maxAmmunition: 8
-  ammunition: 8
+  maxAmmunition: 10
+  ammunition: 10
   defaultBulletPrefab: {fileID: 2184341708168693140, guid: 83c41dbacbcdec044aed64c4628285d7, type: 3}
   healthUI: {fileID: 0}
   ammoUI: {fileID: 0}
@@ -220,6 +220,7 @@ MonoBehaviour:
   emptyAmmoParticles: {fileID: 1990028487347926662, guid: 38c86d02fec6d0a41bf6bfe5700cf282, type: 3}
   stompParticles: {fileID: 8225684089973536886}
   playerDyingParticles: {fileID: 2266623910603664848}
+  backgroundTiles: {fileID: 0}
 --- !u!212 &6764035085250236666
 SpriteRenderer:
   m_ObjectHideFlags: 0
